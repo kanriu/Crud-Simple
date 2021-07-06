@@ -1,26 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useReducer } from "react";
+import CrudSimple from "./components/CrudSimple";
+import { GlobalContext } from "./global/GlobalContext";
+import { globalReducer } from "./global/globalReducer";
 
-function App() {
+const App = () => {
+  /* Se declara el useReducer, que tiene como parámetros el globalReducer
+  (en este caso solo hay uno y no es necesario crear un store), initialValues(los valores iniciales)*/
+
+  const initialValues = {
+    text: [],
+    focus: { id: 0, content: "" },
+  };
+  const [global, dispatch] = useReducer(globalReducer, initialValues);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <GlobalContext.Provider value={{ global, dispatch }}>
+        <CrudSimple />
+      </GlobalContext.Provider>
+    </>
   );
-}
+};
 
 export default App;
