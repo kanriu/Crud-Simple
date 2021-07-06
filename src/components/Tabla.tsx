@@ -38,7 +38,7 @@ const Tabla = () => {
 
   return (
     <div className="row">
-      <div className="col-5 mx-auto">
+      <div className="col-md-5 col-sm-12 mx-auto">
         <table className="table table-dark table-hover text-center">
           <thead className="table-light">
             <tr>

@@ -56,7 +56,7 @@ const Formulario = () => {
   return (
     <form onSubmit={handleSubmit}>
       <div className="row m-5">
-        <div className="col-3 mx-auto">
+        <div className="col-md-3 col-sm-12 mx-auto">
           <label className="form-label">Texto:</label>
           <input
             className="form-control"
@@ -68,7 +68,7 @@ const Formulario = () => {
         </div>
       </div>
       <div className="row m-5">
-        <div className="col-3 d-grid gap-2 mx-auto">
+        <div className="col-md-3 col-sm-12 d-grid gap-2 mx-auto">
           <button type="submit" className="btn btn-outline-primary">
             {text.id !== 0 ? "EDITAR" : "AGREGAR"}
           </button>
